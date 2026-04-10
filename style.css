@@ -126,7 +126,7 @@ body {
 }
 
 .hero__content {
-  margin-top: 200px; /* espaço abaixo da logo */
+  margin-top: 260px; /* espaço abaixo da logo */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -449,6 +449,10 @@ body {
 @media (min-width: 600px) {
   .hero__logo {
     width: 560px;
+  }
+
+  .hero__content {
+    margin-top: 320px;
   }
 
   .menu-section {
