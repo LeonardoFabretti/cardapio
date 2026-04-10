@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cardápio digital A Cord" />
+  <title>A Cord — Cardápio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="home">
+
+    <header class="hero__header">
+      <img src="nn.png" alt="Logo A Cord" class="hero__logo" />
+    </header>
+
+    <div class="hero__content">
+      <p class="hero__tagline">Sabor que conta histórias</p>
+      <h1 class="hero__title">Bem-vindo ao nosso<br />restaurante</h1>
+      <p class="hero__subtitle">
+        Ingredientes frescos, receitas exclusivas e uma experiência
+        que você não vai esquecer.
+      </p>
+      <a href="#cardapio" class="btn btn--primary" id="btnVerCardapio">Ver Cardápio</a>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       CARDÁPIO
+  ============================================================ -->
+  <main class="menu-wrapper" id="cardapio">
+
+    <!-- Barra de categorias — tabs -->
+    <nav class="category-nav" id="categoryNav">
+      <ul class="category-nav__list">
+        <li>
+          <a href="#" class="category-nav__link active" data-target="pratos-principais">
+            Pratos Principais
+          </a>
+        </li>
+        <li>
+          <a href="#" class="category-nav__link" data-target="pratos-do-dia">
+            Pratos do Dia
+          </a>
+        </li>
+        <li>
+          <a href="#" class="category-nav__link" data-target="entradas">
+            Entradas
+          </a>
+        </li>
+        <li>
+          <a href="#" class="category-nav__link" data-target="saladas">
+            Saladas
+          </a>
+        </li>
+        <li>
+          <a href="#" class="category-nav__link" data-target="porcoes">
+            Porções
+          </a>
+        </li>
+        <li>
+          <a href="#" class="category-nav__link" data-target="bebidas">
+            Bebidas
+          </a>
+        </li>
+        <li>
+          <a href="#" class="category-nav__link" data-target="sobremesas">
+            Sobremesas
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ── PRATOS PRINCIPAIS ───────────────────────────────── -->
+    <section class="menu-section is-active" id="pratos-principais">
+      <div class="section-header">
+        <h2 class="section-header__title">Pratos Principais</h2>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Filé à Parmegiana" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Filé à Parmegiana</h3>
+            <p class="card__desc">Filé mignon empanado, coberto com molho de tomate artesanal e queijo derretido. Acompanha arroz e fritas.</p>
+            <span class="card__price">R$ 59,90</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Salmão Grelhado" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Salmão Grelhado</h3>
+            <p class="card__desc">Postas de salmão fresco grelhadas na manteiga de ervas, com legumes salteados e purê de batata.</p>
+            <span class="card__price">R$ 74,90</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Risoto de Funghi" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Risoto de Funghi</h3>
+            <p class="card__desc">Arroz arbório cremoso com cogumelos funghi secchi, toque de vinho branco e parmesão ralado na hora.</p>
+            <span class="card__price">R$ 52,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Frango ao Molho Madeira" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Frango ao Molho Madeira</h3>
+            <p class="card__desc">Peito de frango suculento ao molho Madeira com champignon, servido com arroz branco e salada verde.</p>
+            <span class="card__price">R$ 44,90</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Costela Assada no Bafo" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Costela Assada no Bafo</h3>
+            <p class="card__desc">Costela bovina lentamente assada por horas até desmanchar. Acompanha farofa especial e vinagrete.</p>
+            <span class="card__price">R$ 82,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Massa Carbonara" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Massa Carbonara</h3>
+            <p class="card__desc">Espaguete al dente com pancetta crocante, gema de ovo, pecorino e pimenta-do-reino moída.</p>
+            <span class="card__price">R$ 48,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1519984388953-d2406bc725e1?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Bacalhau à Portuguesa" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Bacalhau à Portuguesa</h3>
+            <p class="card__desc">Lombo de bacalhau dessalgado assado com batatas, cebola, azeitonas e azeite extravirgem.</p>
+            <span class="card__price">R$ 89,90</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1540914124281-342587941389?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Bowl Vegano" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Bowl Vegano</h3>
+            <p class="card__desc">Quinoa, grão-de-bico, abacate, vegetais assados e molho tahine de limão siciliano.</p>
+            <span class="card__price">R$ 39,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Mix de Frutos do Mar" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Mix de Frutos do Mar</h3>
+            <p class="card__desc">Camarão, lula, polvo e mariscos salteados ao alho e azeite, servidos com pão rústico.</p>
+            <span class="card__price">R$ 96,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Omelete Gourmet" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Omelete Gourmet</h3>
+            <p class="card__desc">Omelete recheada com queijo brie, tomate seco, rúcula e presunto parma. Acompanha salada mista.</p>
+            <span class="card__price">R$ 36,00</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── PRATOS DO DIA ───────────────────────────────────── -->
+    <section class="menu-section menu-section--highlight" id="pratos-do-dia">
+      <div class="section-header">
+        <h2 class="section-header__title">Pratos do Dia</h2>
+        <span class="badge">Hoje</span>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Bobó de Camarão" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Bobó de Camarão</h3>
+            <p class="card__desc">Camarões frescos em caldo de mandioca cremoso com leite de coco e azeite de dendê. Acompanha arroz.</p>
+            <span class="card__price">R$ 67,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Picanha na Brasa" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Picanha na Brasa</h3>
+            <p class="card__desc">Picanha premium grelhada no ponto perfeito, com farofa crocante, vinagrete e arroz com feijão.</p>
+            <span class="card__price">R$ 79,90</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Moqueca de Peixe" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Moqueca de Peixe</h3>
+            <p class="card__desc">Filé de peixe fresco refogado com tomate, pimentão, coentro e leite de coco. Com pirão e arroz.</p>
+            <span class="card__price">R$ 72,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Feijoada Completa" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Feijoada Completa</h3>
+            <p class="card__desc">Feijão preto com carnes nobres, arroz, couve refogada, farofa, laranja e torresmo.</p>
+            <span class="card__price">R$ 55,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Tilápia Grelhada" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Tilápia Grelhada</h3>
+            <p class="card__desc">Filé de tilápia grelhado com limão e ervas finas. Acompanha arroz integral e brócolis no vapor.</p>
+            <span class="card__price">R$ 48,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Prato Executivo" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Prato Executivo</h3>
+            <p class="card__desc">Proteína do dia, arroz, feijão, salada e suco natural incluso. Varia diariamente.</p>
+            <span class="card__price">R$ 35,00</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── ENTRADAS ───────────────────────────────────────── -->
+    <section class="menu-section" id="entradas">
+      <div class="section-header">
+        <h2 class="section-header__title">Entradas</h2>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Bruschetta de Tomate" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Bruschetta de Tomate</h3>
+            <p class="card__desc">Fatias de pão rústico tostado com tomate fresco, alho, manjericão e fio de azeite. 4 unidades.</p>
+            <span class="card__price">R$ 26,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Croquete de Carne" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Croquete de Carne</h3>
+            <p class="card__desc">Croquetes crocantes recheados com carne moída temperada e queijo derretido. 6 unidades.</p>
+            <span class="card__price">R$ 29,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1555243896-2b4d50618c2c?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Tábua de Frios" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Tábua de Frios</h3>
+            <p class="card__desc">Presunto parma, salame, queijo brie, gorgonzola, uvas e torradinhas artesanais.</p>
+            <span class="card__price">R$ 58,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1547592166-5a8f0bca604b?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Sopa do Dia" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Sopa do Dia</h3>
+            <p class="card__desc">Sopa cremosa preparada diariamente com ingredientes da estação. Varia conforme o dia.</p>
+            <span class="card__price">R$ 22,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1535400255456-98a67c0b5ed0?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Carpaccio de Filé" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Carpaccio de Filé</h3>
+            <p class="card__desc">Fatias finíssimas de filé mignon, molho mostarda e mel, alcaparras e parmesão laminado.</p>
+            <span class="card__price">R$ 46,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Bolinho de Bacalhau" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Bolinho de Bacalhau</h3>
+            <p class="card__desc">Bolinhos dourados de bacalhau dessalgado com salsinha, servidos com molho de pimenta. 6 unidades.</p>
+            <span class="card__price">R$ 34,00</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── SALADAS ─────────────────────────────────────────── -->
+    <section class="menu-section" id="saladas">
+      <div class="section-header">
+        <h2 class="section-header__title">Saladas</h2>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Salada Caesar" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Salada Caesar</h3>
+            <p class="card__desc">Alface romana, croutons, parmesão em lascas e molho caesar clássico. Com ou sem frango grelhado.</p>
+            <span class="card__price">R$ 32,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Salada Caprese" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Salada Caprese</h3>
+            <p class="card__desc">Tomate maçã, muçarela de búfala fresca, manjericão e azeite extravirgem siciliano.</p>
+            <span class="card__price">R$ 36,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Salada Mediterrânea" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Salada Mediterrânea</h3>
+            <p class="card__desc">Pepino, tomate, cebola roxa, azeitonas pretas, queijo feta e molho de limão com orégano.</p>
+            <span class="card__price">R$ 34,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Salada Verde da Casa" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Salada Verde da Casa</h3>
+            <p class="card__desc">Mix de folhas frescas, cenoura ralada, beterraba, semente de girassol e molho da casa.</p>
+            <span class="card__price">R$ 26,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1559181567-c3190ca9d222?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Salada de Quinoa" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Salada de Quinoa</h3>
+            <p class="card__desc">Quinoa cozida, manga, espinafre, amêndoas tostadas e vinagrete de laranja. Leve e nutritiva.</p>
+            <span class="card__price">R$ 38,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1529059997568-3d847b1154f0?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Salada Nicoise" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Salada Niçoise</h3>
+            <p class="card__desc">Atum, ovo cozido, feijão verde, tomate, azeitona e vinagrete de mostarda dijon.</p>
+            <span class="card__price">R$ 42,00</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── PORÇÕES ─────────────────────────────────────────── -->
+    <section class="menu-section" id="porcoes">
+      <div class="section-header">
+        <h2 class="section-header__title">Porções</h2>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Batata Frita" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Batata Frita</h3>
+            <p class="card__desc">Batatas crocantes fritas por imersão, temperadas com sal grosso e alecrim. Serve até 3 pessoas.</p>
+            <span class="card__price">R$ 28,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Frango à Passarinho" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Frango à Passarinho</h3>
+            <p class="card__desc">Pedaços de frango temperados e fritos até dourar, com molho de alho e limão. Serve 2.</p>
+            <span class="card__price">R$ 42,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Pão de Queijo" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Pão de Queijo</h3>
+            <p class="card__desc">Pão de queijo mineiro recém-saído do forno, crocante por fora e macio por dentro. 8 unidades.</p>
+            <span class="card__price">R$ 18,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1551248429-40975aa4de74?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Isca de Peixe" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Isca de Peixe</h3>
+            <p class="card__desc">Tiras de peixe branco empanadas e fritas, acompanha molho tártaro caseiro. Serve 2.</p>
+            <span class="card__price">R$ 38,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Calabresa Acebolada" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Calabresa Acebolada</h3>
+            <p class="card__desc">Linguiça calabresa fatiada e grelhada, refogada com cebola dourada e pimentão. Serve 2.</p>
+            <span class="card__price">R$ 36,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Batata Rústica com Cheddar" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Batata Rústica com Cheddar</h3>
+            <p class="card__desc">Batata em cunha assada com páprica, coberta com cheddar derretido e bacon crocante. Serve 2.</p>
+            <span class="card__price">R$ 34,00</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── BEBIDAS ─────────────────────────────────────────── -->
+    <section class="menu-section" id="bebidas">
+      <div class="section-header">
+        <h2 class="section-header__title">Bebidas</h2>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Suco Natural" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Suco Natural</h3>
+            <p class="card__desc">Laranja, maracujá, melancia ou abacaxi. Feito na hora. 400 ml.</p>
+            <span class="card__price">R$ 11,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Limonada Suíça" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Limonada Suíça</h3>
+            <p class="card__desc">Limão siciliano, leite condensado e água com gás. Refrescante e cremosa. 500 ml.</p>
+            <span class="card__price">R$ 16,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1581636625402-29b2a704ef13?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Refrigerante" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Refrigerante</h3>
+            <p class="card__desc">Coca-Cola, Guaraná Antarctica ou Sprite. Lata 350 ml.</p>
+            <span class="card__price">R$ 7,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Água Mineral" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Água Mineral</h3>
+            <p class="card__desc">Com ou sem gás. Garrafa 500 ml ou 1,5 litro.</p>
+            <span class="card__price">R$ 5,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Vinho Tinto da Casa" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Vinho Tinto da Casa</h3>
+            <p class="card__desc">Taça de vinho tinto suave, seleção do sommelier. 150 ml.</p>
+            <span class="card__price">R$ 24,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1566633806827-98a525d07a35?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Cerveja Artesanal" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Cerveja Artesanal</h3>
+            <p class="card__desc">IPA, Weiss ou Stout. Long Neck 355 ml.</p>
+            <span class="card__price">R$ 19,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Caipirinha" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Caipirinha</h3>
+            <p class="card__desc">Cachaça artesanal, limão, açúcar e gelo. Também em versão maracujá ou morango.</p>
+            <span class="card__price">R$ 22,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Café Expresso" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Café Expresso</h3>
+            <p class="card__desc">Blend especial torrado artesanalmente. Servido curto ou longo.</p>
+            <span class="card__price">R$ 8,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Milk Shake" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Milk Shake</h3>
+            <p class="card__desc">Chocolate, morango, baunilha ou ovomaltine. Cremoso e gelado. 400 ml.</p>
+            <span class="card__price">R$ 18,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1556679343-c7306121c166?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Chá Gelado" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Chá Gelado</h3>
+            <p class="card__desc">Pêssego, limão ou hibisco. Levemente adoçado, com gelo e hortelã. 400 ml.</p>
+            <span class="card__price">R$ 10,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Vinho Branco da Casa" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Vinho Branco da Casa</h3>
+            <p class="card__desc">Taça de vinho branco seco e frutado, ideal com peixes e frutos do mar. 150 ml.</p>
+            <span class="card__price">R$ 24,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Drinque Especial da Casa" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Drinque Especial da Casa</h3>
+            <p class="card__desc">Criação exclusiva do nosso bartender. Pergunte ao garçom a opção da semana!</p>
+            <span class="card__price">R$ 28,00</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── SOBREMESAS ──────────────────────────────────────── -->
+    <section class="menu-section" id="sobremesas">
+      <div class="section-header">
+        <h2 class="section-header__title">Sobremesas</h2>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Petit Gâteau" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Petit Gâteau</h3>
+            <p class="card__desc">Bolinho de chocolate quente com coração derretido, sorvete de creme e calda de frutas vermelhas.</p>
+            <span class="card__price">R$ 28,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Pudim de Leite" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Pudim de Leite</h3>
+            <p class="card__desc">Receita tradicional da casa, cremoso com calda de caramelo dourado. Porção individual.</p>
+            <span class="card__price">R$ 18,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Cheesecake de Frutas" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Cheesecake de Frutas</h3>
+            <p class="card__desc">Base de biscoito, creme de cream cheese e cobertura de geleia de morango fresca.</p>
+            <span class="card__price">R$ 22,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Sorvete Artesanal" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Sorvete Artesanal</h3>
+            <p class="card__desc">2 bolas à escolha: creme, chocolate, morango ou pistache. Com cobertura quente ou frutas.</p>
+            <span class="card__price">R$ 15,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1564355808539-22fda35bed7e?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Brownie com Sorvete" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Brownie com Sorvete</h3>
+            <p class="card__desc">Brownie quentinho de chocolate meio amargo, bola de sorvete de creme e calda quente.</p>
+            <span class="card__price">R$ 24,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Mousse de Maracujá" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Mousse de Maracujá</h3>
+            <p class="card__desc">Mousse leve e aerada de maracujá com calda de fruta fresca e raspas de limão.</p>
+            <span class="card__price">R$ 16,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Crepe de Nutella" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Crepe de Nutella</h3>
+            <p class="card__desc">Crepe artesanal com Nutella e banana caramelizada, finalizado com açúcar de confeiteiro.</p>
+            <span class="card__price">R$ 20,00</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?auto=format&fit=crop&w=400&h=220&q=80"
+            alt="Torta de Limão" class="card__img" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__name">Torta de Limão</h3>
+            <p class="card__desc">Base crocante de biscoito, creme de limão siciliano e merengue italiano maçaricado.</p>
+            <span class="card__price">R$ 21,00</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       RODAPÉ
+  ============================================================ -->
+  <footer class="footer">
+    <img src="nn.png" alt="Logo A Cord" class="footer__logo" />
+    <p class="footer__name">A Cord</p>
+    <p class="footer__tagline">Sabor que conta histórias</p>
+    <p class="footer__copy">© 2026 — Todos os direitos reservados</p>
+  </footer>
+
+  <button class="btn-top" id="btnTop" aria-label="Voltar ao topo">↑</button>
+
+  <!-- ============================================================
+       MODAL DE DETALHES DO PRATO
+  ============================================================ -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true">
+    <div class="modal" id="modalBox">
+      <button class="modal__close" id="modalClose" aria-label="Fechar">✕</button>
+      <img src="" alt="" class="modal__img" id="modalImg" />
+      <div class="modal__body">
+        <h2 class="modal__name" id="modalName"></h2>
+        <p class="modal__desc" id="modalDesc"></p>
+        <span class="modal__price" id="modalPrice"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,602 @@
+/* ============================================================
+   A CORD — Cardápio Digital
+   style.css
+   Paleta: preto #111  |  branco #FAFAFA  |  vinho #8B0000
+            dourado #C9A84C  |  cinza claro #F4F1EC
+============================================================ */
+
+/* ── Reset & base ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black:       #111111;
+  --white:       #FAFAFA;
+  --wine:        #8B0000;
+  --wine-light:  #A81010;
+  --gold:        #C9A84C;
+  --gold-light:  #E2C06A;
+  --gray-bg:     #F4F1EC;
+  --gray-card:   #F5F4F1;
+  --text-muted:  #666666;
+  --radius:      12px;
+  --shadow:      0 4px 20px rgba(0, 0, 0, 0.08);
+  --transition:  0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--gray-bg);
+  color: var(--black);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Utilitários ──────────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform var(--transition), box-shadow var(--transition),
+              background-color var(--transition);
+}
+
+.btn--primary {
+  background: var(--gold);
+  color: var(--black);
+  box-shadow: 0 6px 30px rgba(201, 168, 76, 0.4);
+  letter-spacing: 0.5px;
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: var(--gold-light);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(201, 168, 76, 0.55);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+/* ── HERO ─────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100svh;           /* altura real em mobile */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 24px 60px;
+
+  /* Fundo gradiente escuro elegante */
+  background: linear-gradient(
+    160deg,
+    #1a0a0a 0%,
+    #2c0d0d 40%,
+    #111111 100%
+  );
+  overflow: hidden;
+}
+
+/* Ornamento decorativo de fundo */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 30%, rgba(201,168,76,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139,0,0,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero__overlay {
+  display: none; /* reservado para uso com imagem de fundo futura */
+}
+
+.hero__header {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero__logo {
+  width: 460px;
+  max-width: 90vw;
+  height: auto;
+  /* Remove o fundo branco da imagem PNG em telas escuras */
+  mix-blend-mode: lighten;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.6));
+}
+
+.hero__content {
+  margin-top: 200px; /* espaço abaixo da logo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 1;
+}
+
+.hero__tagline {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 8vw, 3.2rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.hero__subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.70);
+  max-width: 340px;
+  line-height: 1.7;
+}
+
+.hero__content .btn {
+  margin-top: 8px;
+}
+
+/* Seta animada no rodapé do hero */
+.hero::after {
+  content: '↓';
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 1.4rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ── NAVEGAÇÃO DE CATEGORIAS (tabs) ─────────────────────── */
+.category-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--wine);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.category-nav::-webkit-scrollbar { display: none; }
+
+.category-nav__list {
+  display: flex;
+  list-style: none;
+  gap: 0;
+  min-width: max-content;
+  padding: 0 12px;
+}
+
+.category-nav__link {
+  display: block;
+  padding: 14px 18px;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.category-nav__link:hover,
+.category-nav__link.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ── WRAPPER GERAL DO CARDÁPIO ────────────────────────────── */
+.menu-wrapper {
+  background-color: var(--gray-bg);
+  background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+  min-height: 60vh;
+}
+
+/* ── SEÇÕES DO CARDÁPIO (tab) ─────────────────────────────── */
+.menu-section {
+  display: none;
+  padding: 36px 16px 56px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.menu-section.is-active {
+  display: block;
+  animation: sectionFadeIn 0.3s ease;
+}
+
+.menu-section.is-active.slide-in-left {
+  animation: slideInFromLeft 0.32s ease;
+}
+
+.menu-section.is-active.slide-in-right {
+  animation: slideInFromRight 0.32s ease;
+}
+
+@keyframes sectionFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  from { opacity: 0; transform: translateX(56px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+  from { opacity: 0; transform: translateX(-56px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Seção destaque (Pratos do dia) */
+.menu-section--highlight {
+  background: linear-gradient(135deg, #fff8ee 0%, #fff3e0 100%);
+}
+
+/* ── CABEÇALHO DA SEÇÃO ───────────────────────────────────── */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--gold);
+  text-align: center;
+}
+
+.section-header__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--wine);
+}
+
+.badge {
+  background: var(--wine);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+/* ── GRID DE CARDS ────────────────────────────────────────── */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── CARD ─────────────────────────────────────────────────── */
+.card {
+  background: var(--gray-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease,
+              box-shadow var(--transition);
+}
+
+.card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 36px rgba(0,0,0,0.14);
+}
+
+/* Imagem do prato */
+.card__img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  background: #e8e4df;
+}
+
+/* Corpo do card */
+.card__body {
+  padding: 14px 16px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card__name {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.3;
+}
+
+.card__desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.card__price {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--wine);
+  margin-top: 8px;
+}
+
+/* ── RODAPÉ ───────────────────────────────────────────────── */
+.footer {
+  background: linear-gradient(160deg, #1a0a0a 0%, #111111 100%);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 48px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__logo {
+  width: 90px;
+  height: auto;
+  mix-blend-mode: lighten;
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
+
+.footer__name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.footer__tagline {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.45);
+}
+
+.footer__copy {
+  font-size: 0.75rem;
+  margin-top: 8px;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ── BOTÃO VOLTAR AO TOPO ─────────────────────────────────── */
+.btn-top {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 200;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: var(--wine);
+  color: var(--white);
+  font-size: 1.2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transition: opacity var(--transition), transform var(--transition);
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.btn-top:hover {
+  transform: translateY(-3px);
+  background: var(--wine-light);
+}
+
+/* ── RESPONSIVO — Tablet / Desktop ───────────────────────── */
+@media (min-width: 600px) {
+  .hero__logo {
+    width: 560px;
+  }
+
+  .menu-section {
+    padding: 48px 28px 64px;
+  }
+
+  .category-nav__link {
+    padding: 16px 24px;
+    font-size: 0.9rem;
+  }
+
+  .card__img {
+    height: 180px;
+  }
+}
+
+@media (min-width: 900px) {
+  .menu-section {
+    padding: 56px 40px 72px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .card__img {
+    height: 200px;
+  }
+
+  .hero__subtitle {
+    max-width: 480px;
+  }
+}
+
+/* ── MODAL DE DETALHES DO PRATO ───────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  width: 100%;
+  max-height: 90dvh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(40px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.25);
+}
+
+.modal-overlay.is-open .modal {
+  transform: translateY(0);
+}
+
+/* Em telas maiores, vira um modal centralizado */
+@media (min-width: 520px) {
+  .modal-overlay {
+    align-items: center;
+    padding: 20px;
+  }
+  .modal {
+    border-radius: 16px;
+    max-width: 440px;
+    max-height: 85dvh;
+    transform: translateY(24px) scale(0.97);
+  }
+  .modal-overlay.is-open .modal {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background var(--transition);
+}
+
+.modal__close:hover {
+  background: var(--wine);
+}
+
+.modal__img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.modal__body {
+  padding: 20px 22px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal__name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.3;
+}
+
+.modal__desc {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.modal__price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--wine);
+  margin-top: 4px;
+}
+
+/* Card clicável */
+.card {
+  cursor: pointer;
+}
+
